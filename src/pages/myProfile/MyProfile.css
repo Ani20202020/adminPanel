@@ -1,0 +1,31 @@
+.profile {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  .profile h1 {
+    margin-bottom: 8px;
+  }
+  
+  .profile h2 {
+    color: #777;
+    margin-bottom: 16px;
+  }
+  
+  .profile p {
+    margin-bottom: 16px;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .stats p {
+    font-weight: bold;
+  }

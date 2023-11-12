@@ -1,0 +1,14 @@
+.systemHealth {
+    display: flex;
+    flex-direction: row;
+    padding: 50px
+}
+
+.leftContent {
+    width: 300px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(53, 50, 56, 0.7), 0 6px 20px 0 rgba(64, 61, 69, 0.9);
+    margin-right: 50px;
+    padding: 20px
+}
