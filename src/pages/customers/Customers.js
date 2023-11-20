@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Customers.scss";
 import { addCustomer, getAllCustomers, removeCustomer } from "../../axios/customers/customers";
-
 const Customers = () => {
   const [customersRequest, setCustomersRequest] = useState({
     loading: true,
@@ -11,7 +10,6 @@ const Customers = () => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [address, setAddress] = useState("");
-
   const fetchData = async () => {
     try {
       const { data } = await getAllCustomers();
@@ -30,7 +28,7 @@ const Customers = () => {
     const target = event.target;
     let value = event.target.value;
     const name = target.name;
-    switch (name) {
+    switch(name){
       case "name":
         setName(value);
         break;
@@ -65,14 +63,15 @@ const Customers = () => {
             console.log("Remove customers Error:", error);
         }
   };
-
   return (
+    
     <div className="customers">
-      <h2 className="title">ToDo List</h2>
+     <h2 className="title">ToDo List</h2>
       {customersRequest.loading ? (
         <h1>...Loading</h1>
       ) : (
-        <div>
+          <div>
+
           <div className="formContent">
             <div className="text_area">
               <input
@@ -95,7 +94,8 @@ const Customers = () => {
                 onFocus={() => setErrorMsg(false)}
                 className="text_input"
               />
-            </div>
+              </div>
+              
             <div className="text_area">
               <input
                 type="text"
@@ -127,12 +127,12 @@ const Customers = () => {
                   <th>Remove</th>
                 </tr>
               </tbody>
-              {customersRequest.customers.map((customer) => {
+              {customersRequest.customers.map((customer,index) => {
                 return (
                   <tbody key={customer.id}>
                     <tr>
-                      {Object.values(customer).map((el, index) => {
-                        return <td key={`${el}-${index}`}>{el || "-"}</td>;
+                      {Object.entries(customer).map(([key,value]) => {
+                        return <td key={`${key}-${index}`}> {key ==="id"? index + 1 :value || "-"}</td>;
                       })}
                       <td>
                         <button onClick={() => removeBtnOnClick(customer.id)}>-</button>

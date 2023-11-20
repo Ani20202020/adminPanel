@@ -17,7 +17,7 @@ const Profile = () => {
         <h1>Loading</h1>
       ) : (
         <div>
-          <h1>{data.username}</h1>
+          <h1>Admin</h1>
         </div>
       )}
       <img style={{height: 600, width: 400}} src={MyImage} />
